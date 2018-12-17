@@ -14,6 +14,7 @@ def Telefone():
                 print('Tente novamente, use 10 caracteres (ddd + 9999-9999): ')
         except:
             print('Ops... Tente novamente')
+    return telefone
 
 def Celular():
     global celular
@@ -26,7 +27,7 @@ def Celular():
                 print('Tente novamente, use 11 caracteres (ddd + 99999-9999): ')
         except:
             print('Ops... Tente novamente')
-
+    return celular
 
 
 
@@ -37,16 +38,15 @@ def inserir():
     conexao = mysql.connector.connect(user ='root', password = 'db', host = 'localhost', database = 'agenda')
     while True:
         nome = str(input('Nome do contato: '))
-        while len(nome) == 0 or len(nome) > 30 or nome in '1 2 3 4 5 6 7 8 9 0':
-            if len(nome) > 30:
-                print('Tente novamente, use no maximo 30 caracteres: ')
-                nome = str(input('Nome do contato: '))
-            elif len(nome) == 0:
-                print('Tente novamente, esse campo não pode ficar vazio: ')
-                nome = str(input('Nome do contato: '))
-            elif nome in '1 2 3 4 5 6 7 8 9 0':
-                print('Tente novamente, esse campo não pode conter números: ')
-                nome = str(input('Nome do contato: '))
+        if len(nome) > 30:
+            print('Tente novamente, use no maximo 30 caracteres: ')
+            nome = str(input('Nome do contato: '))
+        elif len(nome) == 0:
+            print('Tente novamente, esse campo não pode ficar vazio: ')
+            nome = str(input('Nome do contato: '))
+        elif nome in '1 2 3 4 5 6 7 8 9 0':
+            print('Tente novamente, esse campo não pode conter números: ')
+            nome = str(input('Nome do contato: '))
         break
 
     Telefone()
