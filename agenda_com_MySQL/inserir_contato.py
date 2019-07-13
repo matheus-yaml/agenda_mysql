@@ -2,6 +2,14 @@ import mysql.connector
 from mysql.connector import errorcode
 import traceback
 
+
+uuser = 'epiz_22941340'
+ppassowrd = 'xxxs'
+hhost = 'sql100.epizy.com'
+ddatabase = 'epiz_22941340_meu_banco'
+
+
+
 ######################
 def Telefone():
     global telefone
@@ -35,7 +43,7 @@ def Celular():
 
 def inserir():
     global telefone, celular
-    conexao = mysql.connector.connect(user ='root', password = 'db', host = 'localhost', database = 'agenda')
+    conexao = mysql.connector.connect(user=uuser, password=ppassowrd, host=hhost, database=ddatabase)
     while True:
         nome = str(input('Nome do contato: '))
         if len(nome) > 30:

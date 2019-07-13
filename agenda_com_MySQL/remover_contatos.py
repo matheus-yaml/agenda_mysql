@@ -1,8 +1,15 @@
 import mysql.connector
 from exibir_contatos import ver_todos
 
+
+uuser = 'epiz_22941340'
+ppassowrd = 'xxx'
+hhost = 'sql100.epizy.com'
+ddatabase = 'epiz_22941340_meu_banco'
+
+
 def remover():
-    conexao = mysql.connector.connect(user='root', password='db', host='localhost', database='agenda')
+    conexao = mysql.connector.connect(user=uuser, password=ppassowrd, host=hhost, database=ddatabase)
     cursor = conexao.cursor()
 
     while True:

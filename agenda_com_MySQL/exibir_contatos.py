@@ -1,7 +1,14 @@
 import mysql.connector
 
+
+uuser = 'epiz_22941340'
+ppassowrd = 'xxx'
+hhost = 'sql100.epizy.com'
+ddatabase = 'epiz_22941340_meu_banco'
+
+
 def ver_por_nome():
-    conexao = mysql.connector.connect(user='root', password='db', host='localhost', database='agenda')
+    conexao = mysql.connector.connect(user=uuser, password=ppassowrd, host=hhost, database=ddatabase)
     cursor = conexao.cursor()
 
     while True:
@@ -24,7 +31,7 @@ def ver_por_nome():
 
 
 def ver_por_telefone():
-    conexao = mysql.connector.connect(user='root', password='db', host='localhost', database='agenda')
+    conexao = mysql.connector.connect(user=uuser, password=ppassowrd, host=hhost, database=ddatabase)
     cursor = conexao.cursor()
 
     while True:
@@ -48,7 +55,7 @@ def ver_por_telefone():
 
 
 def ver_por_celular():
-    conexao = mysql.connector.connect(user='root', password='db', host='localhost', database='agenda')
+    conexao = mysql.connector.connect(user=uuser, password=ppassowrd, host=hhost, database=ddatabase)
     cursor = conexao.cursor()
 
     while True:
@@ -72,7 +79,7 @@ def ver_por_celular():
 
 
 def ver_por_id():
-    conexao = mysql.connector.connect(user='root', password='db', host='localhost', database='agenda')
+    conexao = mysql.connector.connect(user=uuser, password=ppassowrd, host=hhost, database=ddatabase)
     cursor = conexao.cursor()
 
     while True:
@@ -95,7 +102,7 @@ def ver_por_id():
     cursor.close()
 
 def ver_todos():
-    conexao = mysql.connector.connect(user ='root', password = 'db', host = 'localhost', database = 'agenda')
+    conexao = mysql.connector.connect(user=uuser, password=ppassowrd, host=hhost, database=ddatabase)
     cursor = conexao.cursor()
     cursor.execute('select nome, telefone, celular, id from agenda.contatos')
 
