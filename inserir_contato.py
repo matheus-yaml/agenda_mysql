@@ -3,10 +3,10 @@ from mysql.connector import errorcode
 import traceback
 
 
-uuser = 'epiz_22941340'
-ppassowrd = 'xxxs'
-hhost = 'sql100.epizy.com'
-ddatabase = 'epiz_22941340_meu_banco'
+uuser = 'root'
+ppassowrd = 'root'
+hhost = 'mysql'
+ddatabase = 'agenda'
 
 
 

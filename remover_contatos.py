@@ -2,10 +2,10 @@ import mysql.connector
 from exibir_contatos import ver_todos
 
 
-uuser = 'epiz_22941340'
-ppassowrd = 'xxx'
-hhost = 'sql100.epizy.com'
-ddatabase = 'epiz_22941340_meu_banco'
+uuser = 'root'
+ppassowrd = 'root'
+hhost = 'mysql'
+ddatabase = 'agenda'o
 
 
 def remover():
