@@ -5,7 +5,7 @@ from exibir_contatos import ver_todos
 uuser = 'root'
 ppassowrd = 'root'
 hhost = 'mysql'
-ddatabase = 'agenda'o
+ddatabase = 'agenda'
 
 
 def remover():
