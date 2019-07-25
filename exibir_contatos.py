@@ -4,7 +4,7 @@ import mysql.connector
 uuser = 'root'
 ppassowrd = 'root'
 hhost = 'mysql'
-ddatabase = 'agenda''
+ddatabase = 'agenda'
 
 
 def ver_por_nome():
