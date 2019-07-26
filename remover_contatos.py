@@ -1,6 +1,6 @@
 import mysql.connector
 from exibir_contatos import ver_todos
-
+import os
 
 uuser = 'root'
 ppassowrd = 'root'
@@ -13,10 +13,12 @@ def remover():
     cursor = conexao.cursor()
 
     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print('PAINEL DE REMOÇÃO DE CONTATOS, USE COM CUIDADO')
         input('ENTER para continuar')
 
         while True:
+            os.system('cls' if os.name == 'nt' else 'clear')
             try:
                 print('''
     
@@ -34,10 +36,12 @@ def remover():
                     break
             except:
                 print('Ops... APENAS NÚMEROS, tente novamente! ')
+                input('\n[ENTER]')
         if opcao == 2:
             break
 
         while True:
+            os.system('cls' if os.name == 'nt' else 'clear')
             ver_todos()
             try:
                 id = ''
@@ -46,17 +50,16 @@ def remover():
 
             except:
                 print('Ops... Este campo não pode ficar vazio \n')
+                input('ENTER')
 
 
             else:
-                if len(str(id)) > 1:
-                    id = str(id)
-                    id = f'{id}'
-                    cursor.execute(f'delete from agenda.contatos where id = "{id}"')
-                    conexao.commit()
-                    cursor.close()
-                    conexao.close()
-                    break
+                cursor.execute(f"delete from agenda.contatos where id = '{id}'")
+                print(f'Contato com id {id} deletado com sucesso!')
+                conexao.commit()
+                #cursor.close()
+                #conexao.close()
+                break
 
 
 

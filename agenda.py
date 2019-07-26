@@ -2,8 +2,10 @@ from inserir_contato import inserir
 from exibir_contatos import exibir
 from remover_contatos import remover
 from atualizar_contatos import atualizar
+import os
 
 while True:
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print('''
 
@@ -22,7 +24,7 @@ while True:
             opcao =int(input('Escolha apenas uma das OPCOES ACIMA: '))
 
     except:
-        print('Ops... APENAS NÚMEROS, tente novamente! ')
+        input('Ops... APENAS NÚMEROS, tente novamente! [ENTER]')
 
 
 

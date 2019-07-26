@@ -101,7 +101,8 @@ def inserir():
                 contato = (nome, telefone, celular)
 
         else:
-            print(f'contato {nome.upper()} adcionado ao Banco de dados com sucesso. Telefone: {telefone}, Celular: {celular}')
+            print(f'\ncontato {nome.upper()} adcionado ao Banco de dados com sucesso. \nTelefone: {telefone} \nCelular: {celular}')
+            input('[ENTER]')
             conexao.commit()
             cursor.close()
             conexao.close()

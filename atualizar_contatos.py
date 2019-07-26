@@ -1,7 +1,7 @@
 import mysql.connector
 from inserir_contato import Telefone, Celular
 from exibir_contatos import ver_todos
-
+import os
 
 uuser = 'root'
 ppassowrd = 'root'
@@ -34,7 +34,7 @@ def atualizar():
         id = str(id)
         id = f'{id}'
 
-        print(f'Contato {id} selecionado. Insira os dados atalizados do contato')
+        print(f'Contato ID {id} selecionado. Insira os dados atalizados do contato')
 
         while True:
             nome = str(input('Nome do contato: '))
@@ -57,6 +57,10 @@ def atualizar():
         celular = f'({celular[0:2]}){celular[2:7]}-{celular[7:11]}'
 
         cursor.execute(f'update agenda.contatos set nome = "{nome}", telefone = "{telefone}", celular = "{celular}" where id = "{id}"')
+        print(f'Contato com ID {id} atualizado. ')
+        input('\n[ENTER]')
+        os.system('cls' if os.name == 'nt' else 'clear')
+
         conexao.commit()
         cursor.close()
         conexao.close()

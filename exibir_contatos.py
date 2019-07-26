@@ -1,5 +1,5 @@
 import mysql.connector
-
+import os
 
 uuser = 'root'
 ppassowrd = 'root'
@@ -108,18 +108,15 @@ def ver_todos():
 
     for (nome, telefone, celular, id) in cursor:
         print(f'Nome: {nome:20} Telefone: {telefone}    Celular {celular}   ID {id}')
+    input('[ENTER]')
     conexao.close()
     cursor.close()
 
 
 
-
-
-
-
-
 def exibir():
     while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
         try:
             print('''
             ------------------------------------
